@@ -9,8 +9,8 @@
 # Screenshots 📸
 
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/26943671/228969169-8864691c-035c-4fe6-b4cb-b18320ef58fc.png" height="300" />
-  <img src="https://user-images.githubusercontent.com/26943671/228969223-b9883fa5-d5d7-4b50-9681-239d90d5b648.png" height="300" />
+  <img src="https://github.com/acmcsufoss/fullypack_sveltekit/assets/8463786/a82582a7-b5c9-4a14-bfa1-6dabe2bf12b0" height="300" />
+  <img src="https://github.com/acmcsufoss/fullypack_sveltekit/assets/8463786/4c7a2a3a-b354-4f8f-8cc5-9dd66a78c3e5" height="300" />
 </p>
 
 # Project Goals 🥅
