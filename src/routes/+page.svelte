@@ -1,5 +1,22 @@
-<script>
-  import { candies } from "$lib/stores";
+<script lang="ts">
+  import type { PageData } from "./$types";
+
+  export let data: PageData; // populated by Svelte via +page.server.ts!
+  let candies = data.candies; // grab the initial value from the server
+  let pending = 0; // number of pending requests
+
+  async function addCandy() {
+    // Update count locally.
+    candies++;
+
+    // Update count on the server.
+    pending++;
+    await fetch("/api/candies", {
+      method: "POST",
+      body: JSON.stringify({ candies: 1 }),
+    });
+    pending--;
+  }
 </script>
 
 <svelte:head>
@@ -14,10 +31,11 @@
     <h4>🍭 Candy Shop</h4>
   </header>
 
-  <main>
-    <button class:odd={$candies % 2} on:click={() => ($candies += 1)}> Click me </button>
-    <p>🍬 Candies: {$candies}</p>
-  </main>
+  <div>
+    <button class:odd={candies % 2} on:click={() => addCandy()}> Click me </button>
+    <p>🍬 Candies: {candies}</p>
+    <p>⌛ Pending requests: {pending}</p>
+  </div>
 </article>
 
 <hr />
@@ -27,12 +45,17 @@
 </footer>
 
 <style lang="scss">
-  .candies main {
+  .candies div {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: var(--pico-spacing);
+
+    @media (max-width: 400px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
 
     p {
       margin: 0;
