@@ -20,7 +20,9 @@ export type AddCookiesRequest = {
 
 export const POST: RequestHandler = async ({ request }) => {
   const data = (await request.json()) as AddCookiesRequest;
+
   db.data.candies += data.candies;
+  await db.write();
 
   return json({
     candies: db.data.candies,
