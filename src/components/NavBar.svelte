@@ -1,4 +1,3 @@
-
 <script>
   import { onMount } from "svelte";
 
@@ -8,7 +7,6 @@
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Content", href: "/content" },
-
   ];
 
   // Mobile menu click event handler
@@ -33,10 +31,10 @@
 <nav>
   <div class="inner">
     <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <div on:click={handleMobileIconClick} class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
+    <div on:click={handleMobileIconClick} class={`mobile-icon${showMobileMenu ? " active" : ""}`}>
       <div class="middle-line"></div>
     </div>
-    <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
+    <ul class={`navbar-list${showMobileMenu ? " mobile" : ""}`}>
       {#each navItems as item}
         <li>
           <a href={item.href}>{item.label}</a>
@@ -47,13 +45,12 @@
 </nav>
 
 <style>
-:root {
-  --navheight: 50px;     /* navbar-list.mobile*/
-
-}
+  :root {
+    --navheight: 50px; /* navbar-list.mobile*/
+  }
   nav {
     background-color: #161d27;
-    font-family:  sans-serif;
+    font-family: sans-serif;
     height: var(--navheight);
   }
 
@@ -137,7 +134,7 @@
 
   .navbar-list.mobile {
     background-color: #8d8a8a9d;
-        position: fixed;
+    position: fixed;
     display: block;
     height: calc(100% - var(--navheight));
     bottom: 0;
@@ -150,7 +147,6 @@
   }
 
   .navbar-list li:before {
-   
     content: "";
     position: absolute;
     bottom: 0;
@@ -161,7 +157,6 @@
   }
 
   .navbar-list a {
-    
     color: #fff;
     text-decoration: none;
     display: flex;
@@ -170,7 +165,6 @@
     padding: 0 10px;
     font-size: large;
     font-weight: 500;
-
   }
 
   @media only screen and (min-width: 767px) {
