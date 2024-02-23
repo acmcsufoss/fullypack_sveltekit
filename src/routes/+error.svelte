@@ -1,5 +1,5 @@
 <script>
-  import Center from "../components/Center.svelte";
+  import Center from "$lib/components/Center.svelte";
   /*
     - Inside this page I have some text and a component called Text
     - This component attempts to center anything found inside it's tags
