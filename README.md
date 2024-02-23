@@ -8,8 +8,10 @@
 
 # Screenshots 📸
 
-![image](https://user-images.githubusercontent.com/26943671/228969169-8864691c-035c-4fe6-b4cb-b18320ef58fc.png)
-![image](https://user-images.githubusercontent.com/26943671/228969223-b9883fa5-d5d7-4b50-9681-239d90d5b648.png)
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/26943671/228969169-8864691c-035c-4fe6-b4cb-b18320ef58fc.png" height="300" />
+  <img src="https://user-images.githubusercontent.com/26943671/228969223-b9883fa5-d5d7-4b50-9681-239d90d5b648.png" height="300" />
+</p>
 
 # Project Goals 🥅
 
