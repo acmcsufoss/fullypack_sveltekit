@@ -5,3 +5,7 @@ body {
 .centered {
   text-align: center;
 }
+
+article > header > *:last-child {
+  margin-bottom: 0;
+}
