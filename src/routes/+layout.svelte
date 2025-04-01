@@ -7,6 +7,8 @@
 
   import NavBar from "$lib/components/NavBar.svelte";
   import "$lib/styles.scss";
+  /** @type {{children?: import('svelte').Snippet}} */
+  let { children } = $props();
 </script>
 
 <header class="container">
@@ -14,5 +16,5 @@
 </header>
 
 <main class="container">
-  <slot />
+  {@render children?.()}
 </main>

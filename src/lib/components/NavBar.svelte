@@ -1,6 +1,6 @@
 <script>
   import Icon from "$lib/components/Icon.svelte";
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
 
   // List of navigation items, add more here if you make more pages :D
   const navItems = [
@@ -12,7 +12,7 @@
 <nav>
   <ul class="left">
     <li>
-      <a href="/" class:active={$page.url.pathname == "/"}>
+      <a href="/" class:active={page.url.pathname == "/"}>
         <Icon icon="home" />
       </a>
     </li>
@@ -21,7 +21,7 @@
   <ul class="right">
     {#each navItems.filter((item) => item.href != "/") as item}
       <li>
-        <a href={item.href} class:active={$page.url.pathname == item.href}>
+        <a href={item.href} class:active={page.url.pathname == item.href}>
           {item.label}
         </a>
       </li>

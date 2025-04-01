@@ -1,9 +1,13 @@
 <script lang="ts">
   import type { PageData } from "./$types";
 
-  export let data: PageData; // populated by Svelte via +page.server.ts!
-  let candies = data.candies; // grab the initial value from the server
-  let pending = 0; // number of pending requests
+  interface Props {
+    data: PageData;
+  }
+
+  let { data }: Props = $props();
+  let candies = $state(data.candies); // grab the initial value from the server
+  let pending = $state(0); // number of pending requests
 
   async function addCandy() {
     // Update count locally.
@@ -32,7 +36,7 @@
   </header>
 
   <div>
-    <button class:odd={candies % 2} on:click={() => addCandy()}> Click me </button>
+    <button class:odd={candies % 2} onclick={() => addCandy()}> Click me </button>
     <p>🍬 Candies: {candies}</p>
     <p>⌛ Pending requests: {pending}</p>
   </div>
